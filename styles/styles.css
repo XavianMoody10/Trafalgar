@@ -37,11 +37,13 @@
   gap: 30px;
 }
 .header-navigation__anchor {
+  font-weight: 600;
   text-decoration: none;
-  color: black;
+  color: rgba(0, 0, 0, 0.382);
+  transition-duration: 0.5s;
 }
 .header-navigation__anchor:hover {
-  color: #458ff6;
+  color: black;
 }
 
 .header-mobile-icon {
