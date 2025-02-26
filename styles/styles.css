@@ -1,4 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", serif;
+}
+
+main {
+  background-color: #ffffff;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -131,20 +142,61 @@
   margin: 0 auto;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Mulish", serif;
+.text-xl {
+  font-size: 2rem;
+}
+@media (min-width: 640px) {
+  .text-xl {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1400px) {
+  .text-xl {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1600px) {
+  .text-xl {
+    font-size: 4rem;
+  }
 }
 
-main {
-  background-color: #ffffff;
+.text-lg {
+  font-size: 1.7rem;
+}
+@media (min-width: 1400px) {
+  .text-lg {
+    font-size: 2.3rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .text-md {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1600px) {
+  .text-md {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .text-sm {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1600px) {
+  .text-sm {
+    font-size: 1.2rem;
+  }
 }
 
 .button {
   text-decoration: none;
-  padding: 12px 30px;
+  text-align: center;
+  padding: 12px 0;
+  width: 200px;
   border-radius: 25px;
 }
 
@@ -157,6 +209,17 @@ main {
   border: 2px solid #458ff6;
   color: #458ff6;
   background-color: white;
+}
+
+.button--blue-outline {
+  border: 2px solid #458ff6;
+  color: #458ff6;
+  background-color: white;
+}
+.button--blue-outline:hover {
+  border: 2px solid #458ff6;
+  color: white;
+  background-color: #458ff6;
 }
 
 .animation-enter-right {
@@ -201,12 +264,9 @@ main {
   gap: 20px;
   text-align: center;
 }
-.introduction__heading {
-  font-size: 2rem;
-}
 .introduction__intro {
   color: rgba(0, 0, 0, 0.382);
-  max-width: 500px;
+  max-width: 550px;
 }
 
 .introduction-art {
@@ -224,14 +284,9 @@ main {
   max-width: 100px;
   top: 80px;
   left: -40px;
-  z-index: -1;
+  z-index: 1;
 }
 
-@media (min-width: 640px) {
-  .introduction__heading {
-    font-size: 2.5rem;
-  }
-}
 @media (min-width: 800px) {
   .introduction-bg-grid {
     top: 120px;
@@ -260,19 +315,11 @@ main {
   }
   .introduction-bg-grid {
     left: -20px;
-    top: 150px;
-    max-width: 150px;
   }
 }
 @media (min-width: 1400px) {
   .introduction {
     max-width: 450px;
-  }
-  .introduction__heading {
-    font-size: 3rem;
-  }
-  .introduction__intro {
-    font-size: 1.1rem;
   }
   .introduction-art {
     max-width: 700px;
@@ -282,12 +329,6 @@ main {
   .introduction {
     max-width: 600px;
   }
-  .introduction__heading {
-    font-size: 4rem;
-  }
-  .introduction__intro {
-    font-size: 1.2rem;
-  }
   .introduction-art {
     max-width: 750px;
   }
@@ -295,7 +336,8 @@ main {
 .services-section {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  align-items: center;
+  gap: 70px;
   padding: 20px;
   position: relative;
 }
@@ -312,9 +354,6 @@ main {
   width: 55px;
   border: 1px solid black;
   background-color: black;
-}
-.services-subheading__large-text {
-  font-size: 1.7rem;
 }
 .services-subheading__small-text {
   color: rgba(0, 0, 0, 0.382);
@@ -350,11 +389,48 @@ main {
   color: rgba(0, 0, 0, 0.382);
   text-align: center;
 }
+@media (min-width: 768px) {
+  .services-card {
+    align-items: start;
+    padding: 30px;
+    z-index: 2;
+  }
+  .services-card__icon {
+    height: 70px;
+  }
+  .services-card__info {
+    text-align: start;
+    line-height: 25px;
+  }
+}
+@media (min-width: 1200px) {
+  .services-card__icon {
+    width: 70px;
+    height: 80px;
+  }
+  .services-card__main-point {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1400px) {
+  .services-card__icon {
+    width: 70px;
+    height: 85px;
+  }
+  .services-card__main-point {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1600px) {
+  .services-card__info {
+    font-size: 1.1rem;
+  }
+}
 
 .services-bg-shape {
   display: none;
   position: absolute;
-  max-width: 800px;
+  max-width: 880px;
   top: -20px;
   left: -300px;
   z-index: 1;
@@ -375,20 +451,6 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width: 768px) {
-  .services-card {
-    align-items: start;
-    padding: 30px;
-    z-index: 2;
-  }
-  .services-card__icon {
-    height: 70px;
-  }
-  .services-card__info {
-    text-align: start;
-    line-height: 25px;
-  }
-}
 @media (min-width: 1024px) {
   .services-section {
     padding: 0;
@@ -401,36 +463,8 @@ main {
     display: block;
   }
 }
-@media (min-width: 1200px) {
-  .services-card__icon {
-    width: 70px;
-    height: 80px;
-  }
-  .services-card__main-point {
-    font-size: 1.2rem;
-  }
-}
-@media (min-width: 1400px) {
-  .services-subheading__large-text {
-    font-size: 2rem;
-  }
-  .services-subheading__small-text {
-    font-size: 1.1rem;
-  }
-  .services-card__icon {
-    width: 70px;
-    height: 85px;
-  }
-  .services-card__main-point {
-    font-size: 1.3rem;
-  }
-}
 @media (min-width: 1600px) {
-  .services-card__info {
-    font-size: 1.1rem;
-  }
   .services-subheading__small-text {
-    font-size: 1.2rem;
     max-width: 1050px;
   }
 }

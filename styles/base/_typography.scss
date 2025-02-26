@@ -1,0 +1,42 @@
+@mixin text-xl {
+  font-size: 2rem;
+
+  @media (min-width: 640px) {
+    font-size: 2.5rem;
+  }
+
+  @media (min-width: 1400px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 1600px) {
+    font-size: 4rem;
+  }
+}
+
+@mixin text-lg {
+  font-size: 1.7rem;
+
+  @media (min-width: 1400px) {
+    font-size: 2.3rem;
+  }
+}
+
+@mixin text-md {
+  @media (min-width: 1400px) {
+    font-size: 1.2rem;
+  }
+  @media (min-width: 1600px) {
+    font-size: 1.3rem;
+  }
+}
+
+@mixin text-sm {
+  @media (min-width: 1400px) {
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: 1600px) {
+    font-size: 1.2rem;
+  }
+}
