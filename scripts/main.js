@@ -38,8 +38,8 @@ function appSectionAnimation() {
           entry.target.children[1].classList.add("animation-enter-right");
           entry.target.children[0].classList.add("animation-enter-left");
         } else {
-          entry.target.children[0].classList.add("animation-enter-left");
-          entry.target.children[1].classList.add("animation-enter-right");
+          entry.target.children[1].classList.add("animation-enter-left");
+          entry.target.children[0].classList.add("animation-enter-right");
         }
       }
     });
