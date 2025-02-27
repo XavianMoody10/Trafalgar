@@ -3,6 +3,15 @@
 @use "layouts";
 @use "components";
 
+// Text styles
+.paragraph {
+  line-height: 30px;
+}
+
+.paragraph--text-gray {
+  color: rgba(0, 0, 0, 0.382);
+}
+
 // Font sizes{
 .text-xl {
   @include base.text-xl;
@@ -45,7 +54,7 @@
 @keyframes enter-right {
   from {
     opacity: 0;
-    transform: translateX(-10px);
+    transform: translateX(-20px);
   }
 
   to {
@@ -61,12 +70,12 @@
 @keyframes enter-left {
   from {
     opacity: 0;
-    transform: translateX(0);
+    transform: translateX(20px);
   }
 
   to {
     opacity: 1;
-    transform: translateX(-10px);
+    transform: translateX(0);
   }
 }
 
@@ -87,7 +96,6 @@
   text-align: center;
 
   &__intro {
-    color: rgba(0, 0, 0, 0.382);
     max-width: 550px;
   }
 }
@@ -253,5 +261,113 @@
 @media (min-width: 1600px) {
   .services-subheading__small-text {
     max-width: 1050px;
+  }
+}
+
+// ------------------------------------------------------------------------------------------
+.app-section {
+  padding: 150px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.app-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+.app-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  opacity: 0;
+}
+
+.app-subheading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  &__border {
+    height: 3px;
+    width: 55px;
+    border: 1px solid black;
+    background-color: black;
+  }
+}
+
+.app-image {
+  opacity: 0;
+}
+
+.app-bg-grid {
+  position: absolute;
+  top: 800px;
+  right: -50px;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .app-flex {
+    flex-direction: row;
+    gap: 100px;
+  }
+
+  .app-flex--reverse {
+    flex-direction: row-reverse;
+    gap: 80px;
+  }
+
+  .app-subheading {
+    align-items: start;
+    text-align: start;
+
+    &__large-text {
+      max-width: 350px;
+    }
+  }
+
+  .app-details {
+    max-width: 350px;
+    align-items: start;
+  }
+
+  .app-bg-grid {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app-flex {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1400px) {
+  .app-section {
+    padding: 250px 20px;
+  }
+
+  .app-flex {
+    gap: 100px;
+  }
+
+  .app-image {
+    width: 750px;
+  }
+
+  .app-details {
+    max-width: 500px;
   }
 }
