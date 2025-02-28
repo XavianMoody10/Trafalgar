@@ -107,6 +107,7 @@ main {
   justify-content: center;
   transform: translateX(-100%);
   transition-duration: 0.5s;
+  z-index: 10;
 }
 .side-navigation__list {
   list-style: none;

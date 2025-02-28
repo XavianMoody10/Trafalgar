@@ -13,12 +13,11 @@ function mobileNavigation() {
 
   function toggleNavigation() {
     menuIsOpen = !menuIsOpen;
-    const navigationTransform = navigation.style.transform;
 
     if (menuIsOpen) {
-      navigationTransform = "translateX(0)";
+      navigation.style.transform = "translateX(0)";
     } else {
-      navigationTransform = "translateX(-100%)";
+      navigation.style.transform = "translateX(-100%)";
     }
   }
 
