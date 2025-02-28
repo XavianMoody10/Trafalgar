@@ -1,0 +1,10 @@
+@mixin testimonial-slider {
+  width: 100%;
+  overflow-x: hidden;
+
+  &__track {
+    display: grid;
+    grid-template-columns: repeat(5, 100%);
+    transition-duration: 0.5s;
+  }
+}
