@@ -404,6 +404,7 @@ main {
   border-radius: 20px;
   background-color: white;
   z-index: 2;
+  opacity: 0;
 }
 .services-card__icon {
   width: 55px;
@@ -613,6 +614,7 @@ main {
   gap: 40px;
   position: relative;
   z-index: 1;
+  opacity: 0;
 }
 .testimonial-card__bg-grid {
   position: absolute;
@@ -779,6 +781,7 @@ main {
   padding-top: 100px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 50px;
   position: relative;
   overflow: hidden;
@@ -868,6 +871,9 @@ main {
 }
 
 @media (min-width: 640px) {
+  .blogs-section {
+    padding-top: 200px;
+  }
   .blogs-grid {
     grid-template-columns: repeat(2, 1fr);
   }

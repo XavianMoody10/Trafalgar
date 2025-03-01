@@ -232,6 +232,7 @@
 
 .services-card {
   @include components.service-card;
+  opacity: 0;
 }
 
 .services-bg-shape {
@@ -406,6 +407,7 @@
 
 .testimonial-card {
   @include components.testimonial-card;
+  opacity: 0;
 }
 
 .testimonial-subheading {
@@ -453,6 +455,7 @@
   padding-top: 100px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 50px;
   position: relative;
   overflow: hidden;
@@ -508,6 +511,10 @@
 }
 
 @media (min-width: 640px) {
+  .blogs-section {
+    padding-top: 200px;
+  }
+
   .blogs-grid {
     grid-template-columns: repeat(2, 1fr);
   }

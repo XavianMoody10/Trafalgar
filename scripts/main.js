@@ -54,12 +54,45 @@ function appSectionAnimation() {
   });
 }
 
+function servicesAnimation() {
+  const servicesCards = document.querySelectorAll(".services-card");
+
+  function callback(entries) {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationDelay = `0.${index}s`;
+        entry.target.classList.add("animation-enter-top");
+      }
+    });
+  }
+
+  let observer = new IntersectionObserver(callback, { threshold: 0.8 });
+
+  servicesCards.forEach((s) => {
+    observer.observe(s);
+  });
+}
+
 function testimonialSlider() {
   let currentSlide = 0;
+  const testimonialSection = document.querySelector(".testimonial-section");
+  const testimonialCard = document.querySelector(".testimonial-card");
   const testimonies = document.querySelectorAll(".testimony");
   const testimonyTrack = document.querySelector(".testimonial-slider__track");
   const arrows = document.querySelectorAll(".testimonial-controls__arrow");
   const bullets = document.querySelectorAll(".testimonial-controls__bullet");
+
+  function callback(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        testimonialCard.classList.add("animation-enter-top");
+      }
+    });
+  }
+
+  let observer = new IntersectionObserver(callback, { threshold: 0.5 });
+
+  observer.observe(testimonialSection);
 
   // Add and remove active class from bullets
   function toggleBulletClass(index) {
@@ -96,25 +129,25 @@ function testimonialSlider() {
 // Executes animation for blogs when intersected
 function blogsAnimation() {
   const blogs = document.querySelectorAll(".blog");
-  const blogsSection = document.querySelector(".blogs-section");
 
   function callback(entries) {
-    entries.forEach((entry) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        blogs.forEach((b, index) => {
-          b.style.animationDelay = `0.${index}s`;
-          b.classList.add("animation-enter-top");
-        });
+        entry.target.style.animationDelay = `0.${index}s`;
+        entry.target.classList.add("animation-enter-top");
       }
     });
   }
 
   let observer = new IntersectionObserver(callback, { threshold: 0.8 });
 
-  observer.observe(blogsSection);
+  blogs.forEach((b) => {
+    observer.observe(b);
+  });
 }
 
 mobileNavigation();
 appSectionAnimation();
+servicesAnimation();
 testimonialSlider();
 blogsAnimation();
