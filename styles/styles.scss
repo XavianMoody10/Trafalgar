@@ -3,13 +3,18 @@
 @use "layouts";
 @use "components";
 
-// Text styles
-.paragraph {
+// Line Heights
+.line-height-28 {
   line-height: 28px;
 }
 
-.paragraph--text-gray {
+// Text Colors
+.text-gray {
   color: rgba(0, 0, 0, 0.382);
+}
+
+.text-white {
+  color: white;
 }
 
 // Font sizes{
