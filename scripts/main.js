@@ -93,6 +93,28 @@ function testimonialSlider() {
   });
 }
 
+// Executes animation for blogs when intersected
+function blogsAnimation() {
+  const blogs = document.querySelectorAll(".blog");
+  const blogsSection = document.querySelector(".blogs-section");
+
+  function callback(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        blogs.forEach((b, index) => {
+          b.style.animationDelay = `0.${index}s`;
+          b.classList.add("animation-enter-top");
+        });
+      }
+    });
+  }
+
+  let observer = new IntersectionObserver(callback, { threshold: 0.8 });
+
+  observer.observe(blogsSection);
+}
+
 mobileNavigation();
 appSectionAnimation();
 testimonialSlider();
+blogsAnimation();
