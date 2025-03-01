@@ -1,0 +1,153 @@
+.footer {
+  background-image: linear-gradient(24deg, #5a98f2, #67c3f3);
+  margin-top: 100px;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 90%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.footer-copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+    color: white;
+    font-size: 1.3rem;
+  }
+
+  &__letter {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5a98f2;
+  }
+
+  &__details {
+    color: white;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  &__copyright {
+    color: white;
+    font-weight: 100;
+    text-align: center;
+  }
+}
+
+.footer-navigations {
+  display: grid;
+  gap: 60px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+
+  &__header {
+    color: white;
+    font-weight: 700;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__anchor {
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
+    transition-duration: 0.5s;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .footer-navigations {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .footer-copyright__logo {
+    font-size: 1.8rem;
+    gap: 10px;
+  }
+
+  .footer-copyright__letter {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 100px 0;
+    margin-top: 200px;
+  }
+
+  .footer-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-copyright {
+    max-width: 300px;
+    align-items: flex-start;
+
+    &__details {
+      text-align: start;
+    }
+
+    &__copyright {
+      text-align: start;
+    }
+  }
+
+  .footer-navigations {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-links {
+    align-items: start;
+  }
+
+  .footer-links__list {
+    align-items: start;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    padding: 100px 0;
+  }
+
+  .footer-copyright {
+    max-width: 400px;
+  }
+}
