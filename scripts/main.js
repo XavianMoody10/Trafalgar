@@ -1,16 +1,32 @@
 "use strict";
 
+// Resuable callback for intersection observer
+function resuableIntersectionObserver(elements, callback, options) {
+  let observer = new IntersectionObserver(callback, options);
+
+  // Check if elements is just one element, nodelist, or HTML collection
+  if (elements instanceof NodeList || elements instanceof HTMLCollection) {
+    elements.forEach((a) => {
+      observer.observe(a);
+    });
+  } else {
+    observer.observe(elements);
+  }
+}
+
 // Mobile navigation functionality
 function mobileNavigation() {
   const icon = document.querySelector(".header-mobile-icon");
   const navigation = document.querySelector(".side-navigation");
   let menuIsOpen = false;
 
+  // toggle icon between bars and close
   function toggleIcon() {
     icon.classList.toggle("fa-bars-staggered");
     icon.classList.toggle("fa-xmark");
   }
 
+  // Open and close side navigation
   function toggleNavigation() {
     menuIsOpen = !menuIsOpen;
 
@@ -47,13 +63,10 @@ function appSectionAnimation() {
     });
   }
 
-  let observer = new IntersectionObserver(callback, { threshold: 0.5 });
-
-  appFlexElms.forEach((a) => {
-    observer.observe(a);
-  });
+  resuableIntersectionObserver(appFlexElms, callback, { threshold: 0.5 });
 }
 
+// Executing services animation when in viewport
 function servicesAnimation() {
   const servicesCards = document.querySelectorAll(".services-card");
 
@@ -66,13 +79,10 @@ function servicesAnimation() {
     });
   }
 
-  let observer = new IntersectionObserver(callback, { threshold: 0.8 });
-
-  servicesCards.forEach((s) => {
-    observer.observe(s);
-  });
+  resuableIntersectionObserver(servicesCards, callback, { threshold: 0.8 });
 }
 
+// Execute testimonial slider animation when in viewport
 function testimonialSlider() {
   let currentSlide = 0;
   const testimonialSection = document.querySelector(".testimonial-section");
@@ -90,9 +100,9 @@ function testimonialSlider() {
     });
   }
 
-  let observer = new IntersectionObserver(callback, { threshold: 0.5 });
-
-  observer.observe(testimonialSection);
+  resuableIntersectionObserver(testimonialSection, callback, {
+    threshold: 0.5,
+  });
 
   // Add and remove active class from bullets
   function toggleBulletClass(index) {
@@ -139,11 +149,7 @@ function blogsAnimation() {
     });
   }
 
-  let observer = new IntersectionObserver(callback, { threshold: 0.8 });
-
-  blogs.forEach((b) => {
-    observer.observe(b);
-  });
+  resuableIntersectionObserver(blogs, callback, { threshold: 0.8 });
 }
 
 mobileNavigation();
