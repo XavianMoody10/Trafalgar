@@ -192,7 +192,7 @@
 
 @media (min-width: 1024px) {
   .landing {
-    height: 80vh;
+    height: 90vh;
   }
 
   .landing-content {
@@ -249,5 +249,115 @@
   .landing-content__paragraph {
     font-size: 1.2rem;
     line-height: 32px;
+  }
+}
+
+// --------------------------------------------------
+
+// Services
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding: 30px;
+}
+
+.services-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.services-content__text {
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.services-content__heading-underline {
+  width: 50px;
+  background-color: black;
+  height: 3px;
+}
+
+.services-content__paragraph {
+  color: #7d7987;
+}
+
+.services-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+}
+
+.service-card {
+  border: 1px solid rgba(230, 230, 230, 0.116);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 30px 20px;
+  height: 280px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 5px rgba(132, 131, 131, 0.099);
+}
+
+.service-card__main-point {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.2rem;
+}
+
+.service-card__paragraph {
+  font-family: "Mulish", sans-serif;
+  color: #7d7987;
+  line-height: 25px;
+  max-width: 270px;
+}
+
+.services-content__btn {
+  background-color: white;
+  border: 1px solid #458ff6;
+  color: #458ff6;
+  font-weight: bold;
+  padding: 12px 35px;
+  border-radius: 20px;
+}
+
+.services-content__btn:hover {
+  background-color: #458ff6;
+  color: white;
+}
+
+@media (min-width: 500px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .service-card__main-point {
+    font-size: 1.3rem;
+  }
+
+  .service-card__paragraph {
+    // font-size: 1.1rem;
   }
 }
